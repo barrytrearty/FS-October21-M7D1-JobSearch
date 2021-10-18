@@ -9,6 +9,7 @@ import CompanySection from "./components/CompanySection";
 function App() {
   const [jobsArray, setJobsArray] = useState([]);
   const [searchQuery, setSearchQuery] = useState("");
+  const [skip, setSkip] = useState(0);
   // const [searchQuery, setSearchQuery] = useState("");
 
   return (
@@ -22,12 +23,18 @@ function App() {
             setJobsArray={setJobsArray}
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
+            skip={skip}
           />
           <Route
             path="/"
             exact
             render={() => (
-              <MainSection jobsArray={jobsArray} searchQuery={searchQuery} />
+              <MainSection
+                jobsArray={jobsArray}
+                searchQuery={searchQuery}
+                skip={skip}
+                setSkip={setSkip}
+              />
             )}
           />
           <Route path="/company-detail/:company" component={CompanySection} />

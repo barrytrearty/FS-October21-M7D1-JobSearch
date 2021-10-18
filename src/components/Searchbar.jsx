@@ -9,9 +9,9 @@ import {
   DropdownButton,
 } from "react-bootstrap";
 
-const Searchbar = ({ setJobsArray, searchQuery, setSearchQuery }) => {
+const Searchbar = ({ setJobsArray, searchQuery, setSearchQuery, skip }) => {
   //   const [searchQuery, setSearchQuery] = useState("");
-  const [skip, setSkip] = useState(0);
+  //   const [skip, setSkip] = useState(0);
   //   const [jobsArray, setJobsArray] = useState([]);
   const [searchParameter, setSearchParameter] = useState("Search");
 
@@ -30,7 +30,7 @@ const Searchbar = ({ setJobsArray, searchQuery, setSearchQuery }) => {
 
   useEffect(() => {
     getJobs();
-  }, [searchQuery, searchParameter]);
+  }, [searchQuery, searchParameter, skip]);
 
   return (
     <div>

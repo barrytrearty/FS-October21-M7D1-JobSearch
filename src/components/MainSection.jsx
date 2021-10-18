@@ -9,8 +9,12 @@ import {
   InputGroup,
   DropdownButton,
 } from "react-bootstrap";
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
 
-const MainSection = ({ jobsArray, searchQuery }) => {
+const MainSection = ({ jobsArray, searchQuery, skip, setSkip }) => {
   //   const [searchQuery, setSearchQuery] = useState("");
   //   const [skip, setSkip] = useState(0);
   //   const [jobsArray, setJobsArray] = useState([]);
@@ -25,6 +29,17 @@ const MainSection = ({ jobsArray, searchQuery }) => {
         ) : (
           <div>
             <h2>Jobs</h2>
+
+            {/* <BsFillArrowLeftCircleFill onClick={setSkip((skip -= 10))} /> */}
+            <BsFillArrowLeftCircleFill
+              onClick={() => {
+                if (skip > 9) {
+                  console.log(skip);
+                  setSkip((skip -= 10));
+                }
+              }}
+            />
+            <BsFillArrowRightCircleFill onClick={() => setSkip((skip += 10))} />
             <Row className="border">
               {/* <Row border="primary"> */}
               <Col xs={4}>
