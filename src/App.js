@@ -17,7 +17,7 @@ function App() {
       <div className="App">
         <Container>
           <Link to={`/`}>
-            <h1 className="mt-5 text-align-center">Gimme a Job</h1>
+            <h1 className="mt-5 text-align-center">Gimme a Job Please</h1>
           </Link>
           <Searchbar
             setJobsArray={setJobsArray}

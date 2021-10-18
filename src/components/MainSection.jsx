@@ -32,6 +32,7 @@ const MainSection = ({ jobsArray, searchQuery, skip, setSkip }) => {
 
             {/* <BsFillArrowLeftCircleFill onClick={setSkip((skip -= 10))} /> */}
             <BsFillArrowLeftCircleFill
+              className="icon"
               onClick={() => {
                 if (skip > 9) {
                   console.log(skip);
@@ -39,7 +40,10 @@ const MainSection = ({ jobsArray, searchQuery, skip, setSkip }) => {
                 }
               }}
             />
-            <BsFillArrowRightCircleFill onClick={() => setSkip((skip += 10))} />
+            <BsFillArrowRightCircleFill
+              className="icon"
+              onClick={() => setSkip((skip += 10))}
+            />
             <Row className="border">
               {/* <Row border="primary"> */}
               <Col xs={4}>
